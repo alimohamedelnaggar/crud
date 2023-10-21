@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Crud Operation</title>
+  </head>
+  <body>
+    <div class="crud">
+      <div class="head">
+        <h2 class="">Elnaggar Store</h2>
+        <p>PRODUCT MANAGEMENT SYSTEM</p>
+      </div>
+      <div class="input">
+        <input type="text" id="title" placeholder="title" />
+        <div class="price">
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            id="price"
+            placeholder="price"
+          />
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            id="taxes"
+            placeholder="taxes"
+          />
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            id="ads"
+            placeholder="ads"
+          />
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            id="discount"
+            placeholder="discount"
+          />
+          <small id="total">12122</small>
+        </div>
+        <input type="number" id="count" placeholder="count" />
+        <input type="text" id="category" placeholder="category" />
+        <button id="submit">Create</button>
+      </div>
+      <div class="output">
+        <div class="search">
+          <input
+            type="text"
+            id="search"
+            placeholder="search"
+            onkeyup="searchData(this.value)"
+          />
+          <div class="btn-search">
+            <button id="searchTitle" onclick="getSearchMode(this.id)">
+              Search By Title
+            </button>
+            <button id="searchCategory" onclick="getSearchMode(this.id)">
+              Search By Category
+            </button>
+          </div>
+          <div id="deleteAll"></div>
+          <table class="table table-responsive">
+            <thead class="table-dark">
+              <tr>
+                <th>Id</th>
+                <th>title</th>
+                <th>price</th>
+                <th>taxes</th>
+                <th>ads</th>
+                <th>discount</th>
+                <th>total</th>
+                <th>category</th>
+                <th>update</th>
+                <th>delete</th>
+              </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="/js/app.js"></script>
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
